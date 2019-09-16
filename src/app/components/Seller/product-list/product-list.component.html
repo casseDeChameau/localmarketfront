@@ -1,0 +1,87 @@
+<div class="card mt-3">
+
+  <div class="card-header text-center text-black">
+    <h2>My products</h2>
+  </div>
+  <div class='row'>
+    <div class='col-md-2'>
+      <h5>Filter by name: </h5>
+    </div>
+    <div class='col-md-4'>
+      <input type='text' [(ngModel)]='nameFilter' />
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-6'>
+      <h5>Filtered by: {{nameFilter}} </h5>
+     </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+
+        <div class="card align-items-center" style="width:400px; margin: 5px"
+          *ngFor='let product of data | productFilter:nameFilter'>
+              <img class="card-img-top center" [src]='product.photo1' [title]='product.name'
+                                                [style.width.px]='"200"' [style.height.px]='"200"'
+                                                  [style.margin.px]=''>
+        <div class="card-body text-center">
+          <h4 class="card-title">{{ product.name }}</h4>
+          <h2 class="card-text">{{ product.price | currency:'EUR':'symbol':'1.2-2'}}</h2>
+          <a class="btn btn-primary" > Show Details </a> </div>
+        </div>
+
+
+      <!-- <table *ngIf='data && data.length'
+              class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th> Image </th>
+              <th> Name </th>
+              <th> Quantity </th>
+              <th> Price </th>
+              <th> Id </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let product of data | productFilter:nameFilter' >
+              <td>
+                <img [src]='product.photo1'
+                [title]='product.name'
+                [style.width.px]='100'
+                [style.height.px]='100'>
+                >
+              </td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.price | currency: 'EUR': 'symbol' : '1.2-2' }}</td>
+              <td>{{ product.id}}</td>
+            </tr>
+          </tbody>
+        </table> -->
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <ul class="gallery_box">
+
+          <div *ngFor="let item of data">
+              <img src="https://source.unsplash.com/random/600x600/?object">
+              <span >{{item.name}}</span>
+              <span >{{item.quantity}}</span>
+              <span >{{item.price}}</span>
+          </div>
+
+  </ul> -->
+
+
+
+      <!-- QUAND LE COMPONENT NE SUBSCRIBE PAS VIA LA METHODE DU SERVICE METTRE "ASYNC":
+        <div *ngFor="let item of data | async">
+          <img src="https://source.unsplash.com/random/600x600/?object">
+          <span >{{item.name}}</span>
+          <span >{{item.quantity}}</span>
+          <span >{{item.price}}</span>
+      </div></a>
+    </li> -->
