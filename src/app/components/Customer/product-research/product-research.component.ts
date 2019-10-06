@@ -11,5 +11,4 @@ export class ProductResearchComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

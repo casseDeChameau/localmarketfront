@@ -28,10 +28,6 @@ export class ProductAddComponent implements OnInit {
 
   ngOnInit() {}
 
-  // addProductHandler(){
-  //   this.service.postProduct(this.pdt).subscribe();
-  // }
-
   onSubmit(p: Product) {
     console.log(this.productForm.value);
 
@@ -41,4 +37,5 @@ export class ProductAddComponent implements OnInit {
       err => console.log('ATTENTION! An exception happened: ' + err)
     );
   }
+
 }

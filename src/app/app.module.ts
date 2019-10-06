@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http' ;
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +18,7 @@ import { FooterComponent } from './components/Home/footer/footer.component';
 import { ProductResearchComponent } from './components/Customer/product-research/product-research.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { ProductFilterPipe } from './pipes/product-filter.pipe';
     CustomerComponent,
     SellerComponent,
     ProductResearchComponent,
-    ProductFilterPipe
+    ProductFilterPipe,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,11 @@ import { ProductFilterPipe } from './pipes/product-filter.pipe';
     HttpClientModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({ // @agm/core
+      apiKey: 'AIzaSyDFTKbcSXEN22pUx3zfaabEOGyy7oOZtmI',
+    }),
+    AgmDirectionModule,     // agm-direction
     ],
   providers: [],
   bootstrap: [AppComponent]

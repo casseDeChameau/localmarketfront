@@ -1,13 +1,16 @@
 <div class="card mt-3">
 
+  <!-- Titre -->
   <div class="card-header text-center text-black">
     <h2>My products</h2>
   </div>
+
+  <!-- recherche -->
   <div class='row'>
     <div class='col-md-2'>
       <h5>Filter by name: </h5>
-    </div>
-    <div class='col-md-4'>
+  </div>
+  <div class='col-md-4'>
       <input type='text' [(ngModel)]='nameFilter' />
     </div>
   </div>
@@ -16,10 +19,12 @@
       <h5>Filtered by: {{nameFilter}} </h5>
      </div>
   </div>
+
+
   <div class="card-body">
     <div class="row">
 
-        <div class="card align-items-center" style="width:400px; margin: 5px"
+        <div class="card align-items-center" style="width:300px; margin: 5px"
           *ngFor='let product of data | productFilter:nameFilter'>
               <img class="card-img-top center" [src]='product.photo1' [title]='product.name'
                                                 [style.width.px]='"200"' [style.height.px]='"200"'
@@ -27,7 +32,7 @@
         <div class="card-body text-center">
           <h4 class="card-title">{{ product.name }}</h4>
           <h2 class="card-text">{{ product.price | currency:'EUR':'symbol':'1.2-2'}}</h2>
-          <a class="btn btn-primary" > Show Details </a> </div>
+          <a class="btn btn-primary bg-light" > Show Details </a> </div>
         </div>
 
 
